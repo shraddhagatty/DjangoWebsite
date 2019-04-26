@@ -5,10 +5,29 @@
         <title>First Project</title>
     </head>
     <body>
-    <h1>My FIRST :)</h1>
-    <h2>my first zoom</h2>
-    <img src="{%static "images/Screenshot.png"%}">
+    <link rel="stylesheet" href={% static  "/css/style.css" %}>
+    <h1>Django Level two</h1>
+    <h2>Access Records</h2>
+    <div class="django2">
+    {%if access_record%}
+    <table>
+        <thead>
+        <th>Website</th>
+        <th>Date </th>
 
+        </thead>
+        {% for acc in access_record %}
+        <tr>
+            <td>{{acc.name}}</td>
+            <td>{{acc.date}}</td>
+        </tr>
+        {% endfor  %}
+
+    </table>
+    {% else %}
+    <p>No Access record Found</p>
+    {% endif %}
+</div>
     
     </body>
 
